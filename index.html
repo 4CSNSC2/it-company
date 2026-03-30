@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUSTECH | IT-компания будущего</title>
+    
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Анимации -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Наши стили -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="animated-bg"></div>
+    
+    <!-- Панель прогресса -->
+    <div class="progress-bar"></div>
+
+    <!-- Навигация -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">✦ NEXUSTECH</div>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+                <li><a href="#about">О компании</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ГЛАВНЫЙ ЭКРАН -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Создаем <span class="gradient-text">будущее</span><br>с помощью кода</h1>
+            <p>Инновационные IT-решения для бизнеса любого масштаба. AI, Cloud, Blockchain — мы превращаем идеи в технологии.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary">Начать проект</a>
+                <a href="#cases" class="btn btn-outline">Наши работы</a>
+            </div>
+        </div>
+        <div class="shape" style="top: 10%; left: 5%;">
+            <i class="fas fa-cube fa-3x"></i>
+        </div>
+        <div class="shape" style="bottom: 10%; right: 5%; animation-delay: 2s;">
+            <i class="fas fa-circle fa-3x"></i>
+        </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Наши услуги</h2>
+            <p class="section-subtitle" data-aos="fade-up">Полный спектр IT-решений для вашего бизнеса</p>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Автоматизация инфраструктуры, Kubernetes, CI/CD пайплайны, облачная оптимизация.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile & Web</h3>
+                    <p>Кроссплатформенные приложения, PWA, высоконагруженные веб-сервисы.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Нейросети, компьютерное зрение, NLP, прогнозная аналитика данных.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Cyber Security</h3>
+                    <p>Аудит безопасности, пентест, защита от DDoS, шифрование данных.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Big Data</h3>
+                    <p>Обработка и анализ больших данных, Data Science, визуализация.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon"><i class="fas fa-link"></i></div>
+                    <h3>Blockchain</h3>
+                    <p>Разработка смарт-контрактов, DeFi решения, крипто-интеграции.</p>
+                    <a href="#" class="service-link">Узнать больше →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КЕЙСЫ / ПОРТФОЛИО -->
+    <section id="cases">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Наши кейсы</h2>
+            <p class="section-subtitle" data-aos="fade-up">Реальные проекты, изменившие бизнес клиентов</p>
+            <div class="cases-grid">
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-image"><i class="fas fa-chart-line"></i></div>
+                    <div class="case-content">
+                        <h3>FinTech Аналитика</h3>
+                        <p>Платформа обработки 1M+ транзакций в секунду с AI-прогнозированием.</p>
+                        <div class="case-stats">
+                            <span><i class="fas fa-chart-simple"></i> +45% эффективности</span>
+                            <span><i class="fas fa-clock"></i> 3 месяца</span>
+                        </div>
+                        <span class="case-tag">Big Data</span>
+                    </div>
+                </div>
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-image"><i class="fas fa-robot"></i></div>
+                    <div class="case-content">
+                        <h3>AI Ассистент для E-commerce</h3>
+                        <p>Умный чат-бот и система рекомендаций, увеличившие конверсию на 47%.</p>
+                        <div class="case-stats">
+                            <span><i class="fas fa-chart-line"></i> +47% конверсии</span>
+                            <span><i class="fas fa-users"></i> 50K+ пользователей</span>
+                        </div>
+                        <span class="case-tag">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="case-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-image"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <div class="case-content">
+                        <h3>Cloud Migration</h3>
+                        <p>Миграция инфраструктуры крупного ритейлера в AWS с оптимизацией затрат на 40%.</p>
+                        <div class="case-stats">
+                            <span><i class="fas fa-dollar-sign"></i> -40% затрат</span>
+                            <span><i class="fas fa-rocket"></i> 99.99% аптайм</span>
+                        </div>
+                        <span class="case-tag">DevOps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О КОМПАНИИ -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">О компании</h2>
+            <p class="section-subtitle" data-aos="fade-up">Мы создаем технологии, которые работают</p>
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <h3>Мы — команда профессионалов</h3>
+                    <p>NEXUSTECH — это коллектив экспертов, объединенных страстью к технологиям и стремлением создавать продукты, которые меняют мир. Наша миссия — помогать бизнесу расти через внедрение передовых IT-решений.</p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> 50+ сертифицированных специалистов</li>
+                        <li><i class="fas fa-check-circle"></i> 150+ успешных проектов</li>
+                        <li><i class="fas fa-check-circle"></i> 24/7 техническая поддержка</li>
+                        <li><i class="fas fa-check-circle"></i> Индивидуальный подход к каждому клиенту</li>
+                    </ul>
+                </div>
+                <div class="stats-section" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="150">0</div>
+                            <p>Завершенных проектов</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <p>Экспертов в команде</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="24">0</div>
+                            <p>Стран с клиентами</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="98">0</div>
+                            <p>% Довольных клиентов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОГ / СТАТЬИ -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Блог и статьи</h2>
+            <p class="section-subtitle" data-aos="fade-up">Технологические инсайты от наших экспертов</p>
+            <div class="blog-grid">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 15 марта 2025</div>
+                        <h3>Как выбрать архитектуру для highload-проекта</h3>
+                        <p>Сравнение микросервисов и монолита, кейсы из реальной практики, выбор технологического стека.</p>
+                        <div class="blog-tags">
+                            <span>Архитектура</span>
+                            <span>Highload</span>
+                        </div>
+                        <a href="#" class="read-more">Читать статью →</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 2 февраля 2025</div>
+                        <h3>Внедрение LLM в корпоративную среду</h3>
+                        <p>Безопасность, эффективность и реальные результаты использования AI в бизнес-процессах.</p>
+                        <div class="blog-tags">
+                            <span>AI</span>
+                            <span>LLM</span>
+                        </div>
+                        <a href="#" class="read-more">Читать статью →</a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-content">
+                        <div class="blog-date"><i class="far fa-calendar-alt"></i> 10 января 2025</div>
+                        <h3>DevSecOps: безопасность на этапе разработки</h3>
+                        <p>Как интегрировать безопасность в CI/CD без потери скорости разработки.</p>
+                        <div class="blog-tags">
+                            <span>DevOps</span>
+                            <span>Security</span>
+                        </div>
+                        <a href="#" class="read-more">Читать статью →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Свяжитесь с нами</h2>
+            <p class="section-subtitle" data-aos="fade-up">Готовы обсудить ваш проект?</p>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Контактная информация</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Офис в Москве</strong>
+                            <p>ул. Тверская, 12, БЦ "Тверской", офис 405</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Телефон</strong>
+                            <p>+7 (495) 123-45-67</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong>
+                            <p>hello@nexustech.ru</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-telegram"></i>
+                        <div>
+                            <strong>Telegram</strong>
+                            <p>@nexustech_support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Отправить сообщение</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <select id="subject">
+                                <option value="">Выберите тему</option>
+                                <option value="project">Обсудить проект</option>
+                                <option value="career">Карьера</option>
+                                <option value="partnership">Сотрудничество</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Сообщение" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">✦ NEXUSTECH</div>
+                    <p>Создаем инновационные решения для бизнеса будущего. Технологии, которые работают на результат.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><a href="#">Cloud & DevOps</a></li>
+                        <li><a href="#">Web & Mobile Development</a></li>
+                        <li><a href="#">AI & Machine Learning</a></li>
+                        <li><a href="#">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Компания</h4>
+                    <ul>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#cases">Кейсы</a></li>
+                        <li><a href="#blog">Блог</a></li>
+                        <li><a href="#">Карьера</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Подписаться</h4>
+                    <p>Получайте свежие статьи и анонсы</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 NEXUSTECH. Все права защищены. Создано с <i class="fas fa-heart"></i> для цифрового будущего.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fas fa-check-circle" style="font-size: 3rem; color: #6366f1; margin-bottom: 1rem;"></i>
+            <h3 id="modalTitle"></h3>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
