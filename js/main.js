@@ -1,22 +1,19 @@
-// ========== ИНИЦИАЛИЗАЦИЯ АНИМАЦИЙ ==========
 AOS.init({
     duration: 1000,
     once: true,
     offset: 100
 });
 
-// ========== ПАНЕЛЬ ПРОГРЕССА ПРОКРУТКИ ==========
-window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    const progressBar = document.querySelector('.progress-bar');
+window.addEventListener('scroll', function() {
+    var winScroll = document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    var progressBar = document.querySelector('.progress-bar');
     if (progressBar) {
         progressBar.style.width = scrolled + '%';
     }
     
-    // Изменение навигации при скролле
-    const navbar = document.querySelector('.navbar');
+    var navbar = document.querySelector('.navbar');
     if (navbar) {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -25,35 +22,33 @@ window.addEventListener('scroll', () => {
         }
     }
     
-    // Подсветка активного пункта меню
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    var sections = document.querySelectorAll('section');
+    var navLinks = document.querySelectorAll('.nav-links a');
     
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+    var current = '';
+    sections.forEach(function(section) {
+        var sectionTop = section.offsetTop;
+        var sectionHeight = section.clientHeight;
         if (window.scrollY >= sectionTop - 200) {
             current = section.getAttribute('id');
         }
     });
     
-    navLinks.forEach(link => {
+    navLinks.forEach(function(link) {
         link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
+        if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
         }
     });
 });
 
-// ========== МОБИЛЬНОЕ МЕНЮ ==========
-const menuBtn = document.querySelector('.menu-btn');
-const navLinks = document.querySelector('.nav-links');
+var menuBtn = document.querySelector('.menu-btn');
+var navLinks = document.querySelector('.nav-links');
 
 if (menuBtn) {
-    menuBtn.addEventListener('click', () => {
+    menuBtn.addEventListener('click', function() {
         navLinks.classList.toggle('active');
-        const icon = menuBtn.querySelector('i');
+        var icon = menuBtn.querySelector('i');
         if (icon) {
             icon.classList.toggle('fa-bars');
             icon.classList.toggle('fa-times');
@@ -61,11 +56,10 @@ if (menuBtn) {
     });
 }
 
-// Закрытие меню при клике на ссылку
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
+document.querySelectorAll('.nav-links a').forEach(function(link) {
+    link.addEventListener('click', function() {
         navLinks.classList.remove('active');
-        const icon = menuBtn?.querySelector('i');
+        var icon = menuBtn ? menuBtn.querySelector('i') : null;
         if (icon) {
             icon.classList.add('fa-bars');
             icon.classList.remove('fa-times');
@@ -73,14 +67,13 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 
-// ========== ПЛАВНАЯ ПРОКРУТКА ==========
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
+        var targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
-        const target = document.querySelector(targetId);
+        var target = document.querySelector(targetId);
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
@@ -90,17 +83,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== АНИМАЦИЯ СЧЕТЧИКОВ ==========
-const counters = document.querySelectorAll('.stat-number');
-let counted = false;
+var counters = document.querySelectorAll('.stat-number');
+var counted = false;
 
-const animateCounters = () => {
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        let current = 0;
-        const increment = target / 50;
+function animateCounters() {
+    counters.forEach(function(counter) {
+        var target = parseInt(counter.getAttribute('data-count'));
+        var current = 0;
+        var increment = target / 50;
         
-        const updateCount = () => {
+        function updateCount() {
             if (current < target) {
                 current = Math.ceil(current + increment);
                 counter.innerText = current;
@@ -108,16 +100,15 @@ const animateCounters = () => {
             } else {
                 counter.innerText = target;
             }
-        };
+        }
         updateCount();
     });
-};
+}
 
-// Запуск счетчиков при появлении секции
-const statsSection = document.querySelector('.stats-section');
+var statsSection = document.querySelector('.stats-section');
 if (statsSection) {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting && !counted) {
                 animateCounters();
                 counted = true;
@@ -127,75 +118,71 @@ if (statsSection) {
     observer.observe(statsSection);
 }
 
-// ========== ОБРАБОТКА ФОРМЫ ОБРАТНОЙ СВЯЗИ ==========
-const contactForm = document.getElementById('contactForm');
-const modal = document.getElementById('modal');
-const closeModal = document.querySelector('.close-modal');
-const modalTitle = document.getElementById('modalTitle');
-const modalMessage = document.getElementById('modalMessage');
+var contactForm = document.getElementById('contactForm');
+var modal = document.getElementById('modal');
+var closeModal = document.querySelector('.close-modal');
+var modalTitle = document.getElementById('modalTitle');
+var modalMessage = document.getElementById('modalMessage');
 
 function showModal(title, message) {
     if (modalTitle) modalTitle.innerText = title;
     if (modalMessage) modalMessage.innerText = message;
     if (modal) modal.style.display = 'flex';
     
-    setTimeout(() => {
+    setTimeout(function() {
         if (modal) modal.style.display = 'none';
     }, 3000);
 }
 
 if (closeModal) {
-    closeModal.addEventListener('click', () => {
+    closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 }
 
-window.addEventListener('click', (e) => {
+window.addEventListener('click', function(e) {
     if (e.target === modal) {
         modal.style.display = 'none';
     }
 });
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        const name = document.getElementById('name')?.value || 'Гость';
-        showModal('Сообщение отправлено!', `Спасибо, ${name}! Наш менеджер свяжется с вами в ближайшее время. (Демо-режим)`);
+        var nameInput = document.getElementById('name');
+        var name = nameInput ? nameInput.value : 'Гость';
+        showModal('Сообщение отправлено', 'Спасибо, ' + name + '! Наш менеджер свяжется с вами в ближайшее время.');
         contactForm.reset();
     });
 }
 
-// ========== ПОДПИСКА НА НОВОСТИ ==========
-const newsletterForm = document.getElementById('newsletterForm');
+var newsletterForm = document.getElementById('newsletterForm');
 if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
+    newsletterForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        showModal('Подписка оформлена!', 'Спасибо за подписку! Мы будем присылать вам свежие статьи и новости.');
+        showModal('Подписка оформлена', 'Спасибо за подписку! Мы будем присылать вам свежие статьи и новости.');
         newsletterForm.reset();
     });
 }
 
-// ========== ДЕМО-ССЫЛКИ ==========
-document.querySelectorAll('.service-link, .read-more').forEach(link => {
-    link.addEventListener('click', (e) => {
+document.querySelectorAll('.service-link, .read-more').forEach(function(link) {
+    link.addEventListener('click', function(e) {
         e.preventDefault();
-        showModal('В разработке', 'Этот раздел будет доступен в ближайшее время. Следите за обновлениями!');
+        showModal('В разработке', 'Этот раздел будет доступен в ближайшее время.');
     });
 });
 
-// ========== ПАРАЛЛАКС ЭФФЕКТ ==========
-const shapes = document.querySelectorAll('.shape');
-window.addEventListener('scroll', () => {
-    shapes.forEach((shape, index) => {
-        const speed = 0.3 + (index * 0.1);
-        shape.style.transform = `translateY(${window.scrollY * speed}px)`;
+var shapes = document.querySelectorAll('.shape');
+window.addEventListener('scroll', function() {
+    shapes.forEach(function(shape, index) {
+        var speed = 0.3 + (index * 0.1);
+        shape.style.transform = 'translateY(' + (window.scrollY * speed) + 'px)';
     });
 });
 
-// ========== АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК ==========
-const cards = document.querySelectorAll('.service-card, .case-card, .blog-card');
-const cardObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+var cards = document.querySelectorAll('.service-card, .case-card, .blog-card');
+var cardObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
@@ -203,13 +190,9 @@ const cardObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-cards.forEach(card => {
+cards.forEach(function(card) {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = 'all 0.6s ease';
     cardObserver.observe(card);
 });
-
-// ========== ПРИВЕТСТВИЕ В КОНСОЛИ ==========
-console.log('%c🚀 NEXUSTECH | IT-компания будущего', 'color: #6366f1; font-size: 16px; font-weight: bold;');
-console.log('%cСайт готов к работе! Команда может дорабатывать контент.', 'color: #8b5cf6; font-size: 12px;');
